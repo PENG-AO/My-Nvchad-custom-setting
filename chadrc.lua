@@ -33,6 +33,7 @@ M.plugins = {
                 "lua",
                 "rust",
                 "html", "css", "scss",
+                "javascript",
                 "markdown",
             },
         },
@@ -47,11 +48,13 @@ M.plugins = {
                 "lua-language-server", -- lua
                 "rust-analyzer", -- rust
                 "html-lsp", "css-lsp", -- html & css
-                "ltex-ls", -- latex & markdown
+                "marksman", -- markdown
+                "texlab", -- latex
             },
         },
     },
 
+    -- tree view settings
     ["kyazdani42/nvim-tree.lua"] = {
         override_options = {
             git = { enable = true, },
@@ -63,6 +66,13 @@ M.plugins = {
             },
             view = { side = "left", },
         },
+    },
+
+    -- tabout
+    ["abecodes/tabout.nvim"] = {
+        config = function ()
+            require("tabout").setup()
+        end
     },
 }
 
